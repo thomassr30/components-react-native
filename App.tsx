@@ -1,38 +1,16 @@
+import 'react-native-gesture-handler';
+import { NavigationContainer } from '@react-navigation/native'
 
-import React from 'react';
-import {
-  SafeAreaView,
-  StatusBar,
-  StyleSheet,
-  Text,
-  useColorScheme,
-} from 'react-native';
-
-import {
-  Colors,
-} from 'react-native/Libraries/NewAppScreen';
+import React from 'react'
+import Navigator from './src/navigator/Navigator'
 
 
-function App(): JSX.Element {
-  const isDarkMode = useColorScheme() === 'dark';
-
-  const backgroundStyle = {
-    backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
-  };
-
+const App = () => {
   return (
-    <SafeAreaView style={backgroundStyle}>
-      <StatusBar
-        barStyle={isDarkMode ? 'light-content' : 'dark-content'}
-        backgroundColor={backgroundStyle.backgroundColor}
-      />
-      <Text>React Native Components</Text>
-    </SafeAreaView>
-  );
+    <NavigationContainer>
+      <Navigator />
+    </NavigationContainer>
+  )
 }
 
-const styles = StyleSheet.create({
-  
-});
-
-export default App;
+export default App

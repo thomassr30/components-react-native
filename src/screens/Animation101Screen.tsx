@@ -1,43 +1,11 @@
 import React, { useRef } from 'react'
 import { Easing } from 'react-native';
 import { View, StyleSheet, Animated, Button } from 'react-native';
+import { useAnimation } from '../hooks/useAnimation';
 
 const Animation101Screen = () => {
 
-    const opacity = useRef(new Animated.Value(0)).current;
-    const top = useRef(new Animated.Value(-100)).current
-
-    const fadeIn = () => {
-        Animated.timing(
-            opacity,
-            {
-                toValue: 1,
-                duration: 700,
-                useNativeDriver: true
-            }
-        ).start()
-
-        Animated.timing(
-            top,
-            {
-                toValue: 0,
-                duration:700,
-                useNativeDriver: true,
-                easing: Easing.bounce
-            }
-        ).start()
-    }
-
-    const fadeOut = () => {
-        Animated.timing(
-            opacity,
-            {
-                toValue: 0,
-                duration: 300,
-                useNativeDriver: true
-            }
-        ).start()
-    }
+    const {opacity, top, fadeIn, fadeOut} = useAnimation()
 
   return (
     <View style={styles.container}>

@@ -7,9 +7,14 @@ export const menuItems: ImenuItem[] = [
       component: 'Animation101Screen'
     },
     {
-      name: 'Switch 102',
+      name: 'Switch',
       icon: 'toggle-outline',
       component: 'SwitchScreen'
+    },
+    {
+      name: 'Alerts',
+      icon: 'alert-circle-outline',
+      component: 'AlertScreen'
     },
   ]
   

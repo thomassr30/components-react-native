@@ -5,19 +5,8 @@ import Icon from 'react-native-vector-icons/Ionicons'
 import FlatListMenuItem from '../components/FlatListMenuItem';
 import { ImenuItem } from '../interfaces/menuItem.interface';
 import {styles} from '../theme/appTheme'
+import { menuItems } from '../data/menuItems';
 
-const menuItem: ImenuItem[] = [
-  {
-    name: 'Animation 101',
-    icon: 'cube-outline',
-    component: 'Animation101Screen'
-  },
-  {
-    name: 'Animation 102',
-    icon: 'albums-outline',
-    component: 'Animation102Screen'
-  },
-]
 
 const HomeScreen = () => {
 
@@ -46,7 +35,7 @@ const HomeScreen = () => {
   return (
     <View style={{flex: 1, ...styles.globalMargin}}>
       <FlatList 
-        data={menuItem}
+        data={menuItems}
         renderItem={({item, index}) => <FlatListMenuItem menuItem={item} />}
         keyExtractor={(item) => item.name}
         ListHeaderComponent={renderListHeader}

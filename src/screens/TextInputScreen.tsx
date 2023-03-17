@@ -1,5 +1,10 @@
 import React, { useState } from 'react'
-import { TextInput, View, StyleSheet } from 'react-native';
+import { TextInput, 
+          View, 
+          StyleSheet, 
+          KeyboardAvoidingView, 
+          Platform, 
+          ScrollView } from 'react-native';
 import HeaderTitle from '../components/HeaderTitle'
 import { styles } from '../theme/appTheme'
 
@@ -19,7 +24,8 @@ const TextInputScreen = () => {
   }
 
   return (
-    <View style={styles.globalMargin}>
+        <ScrollView>
+          <View style={styles.globalMargin}>
         <HeaderTitle title='TextInput' />
 
         <TextInput 
@@ -39,6 +45,10 @@ const TextInputScreen = () => {
           keyboardType="email-address"
         />
 
+        <HeaderTitle title={JSON.stringify(form, null, 3)} />
+
+        <HeaderTitle title={JSON.stringify(form, null, 3)} />
+
         <TextInput 
           style={stylesInput.inputStyle}
           placeholder="Telefono"
@@ -46,10 +56,11 @@ const TextInputScreen = () => {
           onChangeText={(value) => onChange(value, 'telefono')}
           keyboardType="numeric"
         />
+        </View>
 
-        <HeaderTitle title={JSON.stringify(form, null, 3)} />
-
-    </View>
+        <View style={{height: 100}} />
+        </ScrollView>
+    
   )
 }
 

@@ -23,6 +23,7 @@ const PullToRefreshScreen = () => {
             <RefreshControl 
                 refreshing={refreshing}
                 onRefresh={onRefresh}
+                progressViewOffset={10}
             />
         }
     >
